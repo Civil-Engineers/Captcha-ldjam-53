@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CaptchaWindow : MonoBehaviour, IPointerDownHandler
+public class Window : MonoBehaviour, IPointerDownHandler
 {
     // Start is called before the first frame update
     void Start()
