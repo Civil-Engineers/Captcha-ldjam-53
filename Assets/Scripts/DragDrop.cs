@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IDragHandler
 {
-    [SerializeField] private Canvas canvas;
+    private Canvas canvas;
     private RectTransform rectTransform;
     private bool lastMouseWasOnScreen;
     // Start is called before the first frame update
