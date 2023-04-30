@@ -70,6 +70,7 @@ public class ImageCaptcha : MonoBehaviour
                 return;
             }
         }
+        text.text = "Success!";
         Debug.Log("good job");
     }
 

@@ -64,3 +64,13 @@ MonoBehaviour:
     - Food
   - sprite: {fileID: 21300000, guid: 1970b6b52c5a4764180c39b4aca8a063, type: 3}
     imageTags: []
+  - sprite: {fileID: 21300000, guid: 66b5df1d60158c14e886ba4ac938b0f3, type: 3}
+    imageTags:
+    - Animal
+  - sprite: {fileID: 21300000, guid: 493b3a8364f936b45b4ba033c2d5f9bb, type: 3}
+    imageTags: []
+  - sprite: {fileID: 21300000, guid: 003e2f4c83a3e6a468106ed058f558f3, type: 3}
+    imageTags: []
+  - sprite: {fileID: 21300000, guid: 6411dfa11eab3084db736fb71ec362e2, type: 3}
+    imageTags:
+    - Food
