@@ -1,18 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Image : MonoBehaviour
+[Serializable]
+public struct Image
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public Sprite sprite;
+    public List<string> imageTags;
+    public bool hasImageTag(string imageTag){
+        return imageTags.Contains(imageTag);
     }
 }
