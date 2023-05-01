@@ -548,6 +548,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 137b8152ed1b73d4da2cd78e420261a0, type: 3}
     - target: {fileID: 6476146441665250347, guid: c4b3be80d220d48f9830d18383065508, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476146441665250347, guid: c4b3be80d220d48f9830d18383065508, type: 3}
       propertyPath: m_UseSpriteMesh
       value: 0
       objectReference: {fileID: 0}

@@ -6,6 +6,7 @@ using DG.Tweening;
 
 public class ImageCaptcha : MonoBehaviour
 {
+    static private List<ImageCaptcha> liveCaptchas;
     public TextMeshProUGUI errorText;
     public TextMeshProUGUI OKText;
 
@@ -20,6 +21,13 @@ public class ImageCaptcha : MonoBehaviour
     
     void Start()
     {
+        if(liveCaptchas == null) {
+            liveCaptchas = new List<ImageCaptcha>();
+        }
+        if(liveCaptchas.Count == 0) {
+            DesktopBuddy.captchaTry();
+        }
+        liveCaptchas.Add(this);
         // fade in
         Tween showTween = this.GetComponent<CanvasGroup>().DOFade(1,0.3f);
 
@@ -38,6 +46,10 @@ public class ImageCaptcha : MonoBehaviour
     }
 
     void OnDestroy() {
+        liveCaptchas.Remove(this);
+        if(liveCaptchas.Count == 0) {
+            DesktopBuddy.captchaAllSolve();
+        }
         this.GetComponent<CanvasGroup>().DOKill();
     }
 

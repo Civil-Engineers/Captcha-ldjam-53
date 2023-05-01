@@ -16,6 +16,9 @@ public class UpgradesWindow : MonoBehaviour
     private int shownWares = 1;
     [SerializeField] private Wares[] wares = new Wares[5];
 
+    [SerializeField] private GameObject spawnParent;
+    [SerializeField] private GameObject desktopBuddyPrefab;
+
     bool wareDownloaded = false;
     bool lvl_1 = false;
     bool lvl_2 = false;
@@ -115,6 +118,10 @@ public class UpgradesWindow : MonoBehaviour
                 break;
             case 3:
                 wares[slot].setTitle("PictoPal MK. "+(slotLevel+1));
+                float randx = Random.Range(-350f, 350f);
+                Quaternion myRotation = Quaternion.identity;
+                GameObject newCursor = Instantiate(desktopBuddyPrefab, new Vector3(randx,-165,0), myRotation);
+                newCursor.transform.SetParent(spawnParent.transform, false);
                 break;
                 
         }

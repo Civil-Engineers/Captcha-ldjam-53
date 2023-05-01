@@ -35,12 +35,10 @@ public class DesktopBuddy : MonoBehaviour
     }
     void Idle() {
         if(idling) {
-            Vector3 goal = new Vector3(Random.Range(-350,350), -180, 0);
+            Vector3 goal = new Vector3(Random.Range(-350,350), -165, 0);
             if(goal.x - transform.localPosition.x > 0) {
-                Debug.Log("right");
                 transform.DORotate(new Vector3(0,180,0), 0);
             } else {
-                Debug.Log("left");
                 transform.DORotate(new Vector3(0,0,0), 0);
             }
             Tweener t1 = transform.DOLocalMove(goal,Random.Range(2,4));
@@ -55,6 +53,7 @@ public class DesktopBuddy : MonoBehaviour
         foreach(DesktopBuddy b in buddies) {
             b.idling = false;
             b.transform.DOKill();
+            b.transform.DORotate(new Vector3(0,0,0), 0);
             b.animator.Play("base.think");
         }
     }

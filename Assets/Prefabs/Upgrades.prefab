@@ -761,6 +761,8 @@ MonoBehaviour:
   - {fileID: 8153939862350214793}
   - {fileID: 5602855926138167776}
   - {fileID: 9013549357866961472}
+  spawnParent: {fileID: 0}
+  desktopBuddyPrefab: {fileID: 0}
 --- !u!1001 &5095404691952981187
 PrefabInstance:
   m_ObjectHideFlags: 0
