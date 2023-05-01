@@ -34,10 +34,10 @@ public class OneClickCaptcha : MonoBehaviour
 
     void OnEnable() {
         Tween showTween = fadeAll(1, fadeInTime);
-        showTween.OnComplete(
-            () =>   CaptchaManager.Instance.activateCaptcha()
-        );
-        Debug.Log("hello");
+        CaptchaManager.Instance.activateCaptcha();
+        // showTween.OnComplete(
+        //     () =>   CaptchaManager.Instance.activateCaptcha()
+        // );
     }
 
     void OnDisable() {
@@ -64,7 +64,6 @@ public class OneClickCaptcha : MonoBehaviour
         toggle.interactable = false;
         Tween hideTween = fadeAll(0, fadeOutTime);
         CaptchaManager.Instance.deactivateCaptcha();
-        Debug.Log("a");
         hideTween.OnComplete (
             () => {
                 this.gameObject.SetActive(false);
