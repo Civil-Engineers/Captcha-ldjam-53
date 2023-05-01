@@ -37,6 +37,10 @@ public class ImageCaptcha : MonoBehaviour
         text.text = imageTag;
     }
 
+    void OnDestroy() {
+        this.GetComponent<CanvasGroup>().DOKill();
+    }
+
     void shuffleChoices() {
         for (int t = 0; t < choices.Count; t++ )
         {
@@ -81,14 +85,45 @@ public class ImageCaptcha : MonoBehaviour
             }
         }
         text.text = "Success!";
-        StartCoroutine("closeWindow");
+        closeWindow();
         // Debug.Log("good job");
     }
 
     // Update is called once per frame
     void Update()
     {
+        int level = UpgradesWindow.Instance.getPictoLevel();
+        if (level > 0) {
+            timeFromShift += Time.deltaTime;
+            timeFromSolve += Time.deltaTime;
+            if(timeFromShift > baseShiftTime*Mathf.Pow(.75f,level)) {
+                thinkingMode();
+                timeFromShift=0;
+            }
+            if(timeFromSolve > timeToFinishSolve*Mathf.Pow(.75f,level)) {
+                // solve it
+                for (int i = 0; i < numberOfChoices; i++) {
+                    if (choices[i].hasImageTag(imageTag)) {
+                        selection[i].setToggle();
+                    } else {
+                        selection[i].resetQuestion();
+                        selection[i].resetToggle();
+                    }
+                }
+                StartCoroutine("closeWindow");
+            }
+        }
     }
+    private float timeFromShift = 0;
+    private float baseShiftTime = .4f;
+    private float timeFromSolve = 0;
+    private float timeToFinishSolve = 5;
+
+    void thinkingMode() {
+        int r = Random.Range(0, numberOfChoices);
+        selection[r].toggleQuestion();
+    }
+
 
     IEnumerator displayError() {
         errorText.DOFade(1,0);
@@ -98,10 +133,8 @@ public class ImageCaptcha : MonoBehaviour
         errorText.gameObject.SetActive(false);
     }
 
-    IEnumerator closeWindow() {
-        // OKText.gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.4f);
-        Tween hideTween = this.GetComponent<CanvasGroup>().DOFade(0,0.3f);
+    void closeWindow() {
+        Tween hideTween = this.GetComponent<CanvasGroup>().DOFade(0,0.4f).SetDelay(0.2f);
         hideTween.OnComplete(
             () => {
                 CaptchaManager.Instance.deactivateCaptcha();

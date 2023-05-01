@@ -103,4 +103,19 @@ public class UpgradesWindow : MonoBehaviour
     public int getMonkeyLevel(){
         return level[2];
     }
+
+    public int getPictoLevel() {
+        return level[3];
+    }
+
+    public void toggleWindowVisibility() {
+        float a = this.GetComponent<CanvasGroup>().alpha;
+        if (a == 1f) { //visible
+            this.GetComponent<CanvasGroup>().alpha = 0f;
+            this.GetComponent<CanvasGroup>().interactable = false;
+        } else {
+            this.GetComponent<CanvasGroup>().interactable = true;
+            this.GetComponent<CanvasGroup>().alpha = 1f;
+        }
+    }
 }
