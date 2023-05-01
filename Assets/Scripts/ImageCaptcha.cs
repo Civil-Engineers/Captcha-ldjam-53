@@ -20,6 +20,9 @@ public class ImageCaptcha : MonoBehaviour
     
     void Start()
     {
+        // fade in
+        Tween showTween = this.GetComponent<CanvasGroup>().DOFade(1,0.3f);
+
         text = GetComponentInChildren<TextMeshProUGUI>();
         Reset();
     }
@@ -98,8 +101,13 @@ public class ImageCaptcha : MonoBehaviour
     IEnumerator closeWindow() {
         // OKText.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.4f);
-        CaptchaManager.Instance.deactivateCaptcha();
-        Destroy(gameObject);
+        Tween hideTween = this.GetComponent<CanvasGroup>().DOFade(0,0.3f);
+        hideTween.OnComplete(
+            () => {
+                CaptchaManager.Instance.deactivateCaptcha();
+                Destroy(gameObject);
+            }
+        );
     }
     
 }

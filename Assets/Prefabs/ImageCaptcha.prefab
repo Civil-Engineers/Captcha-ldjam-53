@@ -769,7 +769,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: -10, y: -8, z: -10, w: -5}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1774,6 +1774,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3733300287172495396, guid: 8b3966bc23314b74ab08d27c8aa3e12e, type: 3}
   m_PrefabInstance: {fileID: 1394923686346924489}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &6511052961083512727
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2347672174291806701}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &6129688151248857224
 MonoBehaviour:
   m_ObjectHideFlags: 0

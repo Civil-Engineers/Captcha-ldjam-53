@@ -9,7 +9,7 @@ public class CaptchaManager : MonoBehaviour
 
     public int numActiveCaptchas = 0;
     
-    private ClickCounter clickCounter;
+    public ClickCounter clickCounter;
 
     public static int LVL_1_CLICKS = 10;
     public static int LVL_2_CLICKS = 20;
@@ -45,14 +45,13 @@ public class CaptchaManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        clickCounter = gameObject.GetComponent<ClickCounter>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (currentLvl < maxLvl) {
-            int numClicks = clickCounter.getNumClicks();
+            int numClicks = clickCounter.getTotalNumClicks();
             
             // start repeating captchas
             if (!isLvl_1 && numClicks >= LVL_1_CLICKS) {
@@ -69,13 +68,11 @@ public class CaptchaManager : MonoBehaviour
             // cancel repeating captchas when you fall under click threshold
             // TODO llolllllololoololololololollololololl
         }
-
-        manageWindows();
+        // bool windowPause = false;
+        // manageWindows(windowPause);
     }
 
-    private void manageWindows() {
-        bool windowPause = false;
-    
+    private void manageWindows(bool windowPause) {    
         if (numActiveCaptchas > maxWindows) {
             CancelInvoke("daTextCaptcha");
             CancelInvoke("daImageCaptcha");
@@ -115,8 +112,8 @@ public class CaptchaManager : MonoBehaviour
     void daImageCaptcha() {
         float randomX = Random.Range(-x_lim, x_lim);
         float randomY = Random.Range(-y_lim, y_lim);
-        activateCaptcha();
         GameObject imgCaptcha = Instantiate(imageCaptcha, new Vector3(randomX, randomY, 0), Quaternion.identity);
+        CaptchaManager.Instance.activateCaptcha();
         imgCaptcha.transform.SetParent (this.transform.parent, false);
     }
 

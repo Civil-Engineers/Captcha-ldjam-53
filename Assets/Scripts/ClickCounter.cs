@@ -7,8 +7,13 @@ public class ClickCounter : MonoBehaviour {
     public static ClickCounter Instance { get; private set; }
 
     public int clickCount = 0;
+    public int totalClickCount = 0;
+
     public TMPro.TextMeshProUGUI counter;
     public GameObject ClickCaptcha;
+
+    private static int maxClicks = 99999;
+    private static int maxDigits = 5;
 
     void Awake()
     {
@@ -29,26 +34,50 @@ public class ClickCounter : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        counter.text =  "" + clickCount;
+        int numDigits;
+        if (clickCount <= 9) {
+            numDigits = 1;
+        } else if (clickCount <= 99) {
+            numDigits = 2;
+        } else if (clickCount <= 999) {
+            numDigits = 3;
+        } else if (clickCount <= 9999) {
+            numDigits = 4;
+        } else {
+            numDigits = maxDigits;
+        }
+
+        string zeroes = new System.String('0', maxDigits-numDigits);
+        counter.text =  zeroes + clickCount;
     }
 
     bool validClick() {
-        return (CaptchaManager.Instance.getNumCaptchas() == 0);
+        return (CaptchaManager.Instance.getNumCaptchas() == 0 && clickCount <= maxClicks);
     }
 
     public void addClick() {
         if (validClick()) {
             clickCount++;
+            totalClickCount++;
         }
     }
 
     public void addNumClicks(int num) {
         if (validClick()) {
             clickCount+=num;
+            totalClickCount+=num;
         }
     }
 
     public int getNumClicks() {
         return clickCount;
+    }
+
+    public int getTotalNumClicks() {
+        return totalClickCount;
+    }
+
+    public void subtractClicks(int num) {
+        clickCount-=num;
     }
 }

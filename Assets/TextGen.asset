@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f166913b22d8f4021a7af8ad984f981a, type: 3}
+  m_Name: TextGen
+  m_EditorClassIdentifier: 
+  captchas:
+  - Image: {fileID: 21300000, guid: 9e3c3833edbd44d8785269db2f8b8fe2, type: 3}
+    Value: amogus
+  - Image: {fileID: 21300000, guid: cd45bc1be72294c6494a573a80c23555, type: 3}
+    Value: banana
+  - Image: {fileID: 21300000, guid: 2095f901b28e64fd49748dc762632a94, type: 3}
+    Value: barfy
+  - Image: {fileID: 21300000, guid: 669962de685304d429a3ecc7105763f3, type: 3}
+    Value: bazinga
+  - Image: {fileID: 21300000, guid: eadc31d634312427e8c5fb755e2306ce, type: 3}
+    Value: beany
+  - Image: {fileID: 21300000, guid: f387a2281c7b3474faa62a9b269aa076, type: 3}
+    Value: biggle
+  - Image: {fileID: 21300000, guid: 9beec8fb5ef6c41f9a3640d275d6c488, type: 3}
+    Value: bingus
+  - Image: {fileID: 21300000, guid: b76b972d530c340319c628f7d3431f17, type: 3}
+    Value: blini
+  - Image: {fileID: 21300000, guid: 3ba516328d124476f8f9418fd7f7510f, type: 3}
+    Value: blubber
+  - Image: {fileID: 21300000, guid: 366b2966c76bd43bfbf7c23a8ba13c5e, type: 3}
+    Value: bonobo
+  - Image: {fileID: 21300000, guid: 7c8719d5e1315476e9ca5e329cad527d, type: 3}
+    Value: boolean
+  - Image: {fileID: 21300000, guid: d16b0743040a54c56a3c57c2bcd3d80b, type: 3}
+    Value: bread
+  - Image: {fileID: 21300000, guid: 0e795cb2b21b54edcae400fccf3f6aa4, type: 3}
+    Value: brick
+  - Image: {fileID: 21300000, guid: 34c569352cb7d476bb73a233476e0b00, type: 3}
+    Value: bubble
+  - Image: {fileID: 21300000, guid: 58a58741af828409e8313dbd67aa553b, type: 3}
+    Value: cactus
+  - Image: {fileID: 21300000, guid: b3da0b70711764305bc9158677a70579, type: 3}
+    Value: chilli
+  - Image: {fileID: 21300000, guid: 0e7003168d9fa4b479a26a801197cddd, type: 3}
+    Value: cottage
+  - Image: {fileID: 21300000, guid: c790539416d1b4f7399435cec1d134d3, type: 3}
+    Value: crisis
+  - Image: {fileID: 21300000, guid: cae2ccde6fa4844fa9bfd03f4576a96f, type: 3}
+    Value: dab
+  - Image: {fileID: 21300000, guid: e2f490ba0e1854e0fa9b6ccf9a741c67, type: 3}
+    Value: donut
+  - Image: {fileID: 21300000, guid: ec247b21ef1b949f198f2094d66d274d, type: 3}
+    Value: dumbo
+  - Image: {fileID: 21300000, guid: cf7b557d427e84e43b569e872f61b40b, type: 3}
+    Value: fedora
+  - Image: {fileID: 21300000, guid: 8259c09911a8c45e2911acd1883c4889, type: 3}
+    Value: fingus
+  - Image: {fileID: 21300000, guid: ae9683c34110940c5b504f52f3bc1b25, type: 3}
+    Value: flub
+  - Image: {fileID: 21300000, guid: 06c5c152610ca4de3998cc01643f61d6, type: 3}
+    Value: foppish
+  - Image: {fileID: 21300000, guid: da02781037e7647b9914f309f4d480e1, type: 3}
+    Value: froggo
+  - Image: {fileID: 21300000, guid: 72b9540c318fe44c68c96093d831b527, type: 3}
+    Value: fungus
+  - Image: {fileID: 21300000, guid: a685a9028803c460bbe19f46000d079c, type: 3}
+    Value: garfield
+  - Image: {fileID: 21300000, guid: 6c02980a36093465e845cafb79bc3120, type: 3}
+    Value: gleebo
+  - Image: {fileID: 21300000, guid: a9e0681739fd54bc39c07fad3ae4df59, type: 3}
+    Value: glimb
+  - Image: {fileID: 21300000, guid: 9219b842d64424063b1c61f80fc8616d, type: 3}
+    Value: glomp
+  - Image: {fileID: 21300000, guid: c14a5a99edc8b4f08b501e84fe539485, type: 3}
+    Value: gooey
+  - Image: {fileID: 21300000, guid: 7e7b34d28fe9b4ee3b2a9dc66d38b0e5, type: 3}
+    Value: goof
+  - Image: {fileID: 21300000, guid: 067e3830cb14c4d6bb92b46513a96672, type: 3}
+    Value: grass
+  - Image: {fileID: 21300000, guid: 9416540abfb8d4e028fc35818f906ce0, type: 3}
+    Value: gubble
+  - Image: {fileID: 21300000, guid: 3acddde9c6d7c44e8bb77ed83cecc739, type: 3}
+    Value: gummy
+  - Image: {fileID: 21300000, guid: 7268bf1c47032401fab13a94d920a62c, type: 3}
+    Value: gurly
+  - Image: {fileID: 21300000, guid: bc1802315960f46ceaa6f621af25779d, type: 3}
+    Value: ham
+  - Image: {fileID: 21300000, guid: 8a71272f9b88d43a78fc4e3ee49262df, type: 3}
+    Value: hurley
+  - Image: {fileID: 21300000, guid: c2f50f0d7edf044ef898feb380f5453b, type: 3}
+    Value: jambon
+  - Image: {fileID: 21300000, guid: fa9b9a3de18414a99a8880110d7cd696, type: 3}
+    Value: knots
+  - Image: {fileID: 21300000, guid: 1a3afe135d0414929952e936e9385424, type: 3}
+    Value: lice
+  - Image: {fileID: 21300000, guid: 02b37d785d39b4750a6b602ee85cbec1, type: 3}
+    Value: licorice
+  - Image: {fileID: 21300000, guid: 6d71a69f588214ef98779451f05287f2, type: 3}
+    Value: longcat
+  - Image: {fileID: 21300000, guid: 42872fb055c3f406cae1945d2aea9347, type: 3}
+    Value: meme
+  - Image: {fileID: 21300000, guid: 0f6345fcfe17743eca1935cab2149c6c, type: 3}
+    Value: moped
+  - Image: {fileID: 21300000, guid: 6958d840a1c914c1f92320aed6ecddb5, type: 3}
+    Value: noob
+  - Image: {fileID: 21300000, guid: 0a7b6e7a333e5496f8e05c139969d13a, type: 3}
+    Value: numpy
+  - Image: {fileID: 21300000, guid: c9ee3f327158846caa65f6a47407957d, type: 3}
+    Value: nuts
+  - Image: {fileID: 21300000, guid: cfcdaedb5a0b8441688ccca3fead8f4e, type: 3}
+    Value: nyan
+  - Image: {fileID: 21300000, guid: 070c45ae7514a47c8a971616f12db3ee, type: 3}
+    Value: pickle
+  - Image: {fileID: 21300000, guid: 2bde007a764df4a4d810060adecf00c2, type: 3}
+    Value: salmonella
+  - Image: {fileID: 21300000, guid: c355119df16664298994e7890c5aa6d9, type: 3}
+    Value: silly
+  - Image: {fileID: 21300000, guid: eb98814b181694c8391a292d5e0116c1, type: 3}
+    Value: slug
+  - Image: {fileID: 21300000, guid: c315f4be0e6894a19a9b570706ae4eea, type: 3}
+    Value: socks
+  - Image: {fileID: 21300000, guid: 4117015f2330b413aa432244061c7314, type: 3}
+    Value: spatula
+  - Image: {fileID: 21300000, guid: 13f608512776b47ce9d04b42c387be51, type: 3}
+    Value: splini
+  - Image: {fileID: 21300000, guid: c1ac1319e17b14566aef7d777526cac7, type: 3}
+    Value: sussy
+  - Image: {fileID: 21300000, guid: 96a2e671087e94653a95feb4f15354b9, type: 3}
+    Value: tents
+  - Image: {fileID: 21300000, guid: 61cf32ad0e3f24999965c017420a060e, type: 3}
+    Value: trolly
+  - Image: {fileID: 21300000, guid: b3eb71f3486da443090d4d6a9fef12a6, type: 3}
+    Value: vendetta
+  - Image: {fileID: 21300000, guid: ab89ef97add534fa587541e4680e58e9, type: 3}
+    Value: yippee
