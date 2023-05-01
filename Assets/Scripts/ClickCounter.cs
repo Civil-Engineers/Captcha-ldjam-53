@@ -52,13 +52,14 @@ public class ClickCounter : MonoBehaviour {
     }
 
     bool validClick() {
-        return (CaptchaManager.Instance.getNumCaptchas() == 0 && clickCount <= maxClicks);
+        return (CaptchaManager.Instance.getNumCaptchas() <= 0 && clickCount <= maxClicks);
     }
 
     public void addClick() {
         if (validClick()) {
             clickCount++;
             totalClickCount++;
+            CaptchaManager.Instance.manageDifficulty();
         }
     }
 
