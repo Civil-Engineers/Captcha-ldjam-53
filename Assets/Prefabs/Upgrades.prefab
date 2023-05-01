@@ -107,6 +107,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4526658405433691841, guid: da2d40b1cb295464ea83888b9fb97fce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526658405433691841, guid: da2d40b1cb295464ea83888b9fb97fce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526658405433691841, guid: da2d40b1cb295464ea83888b9fb97fce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526658405433691841, guid: da2d40b1cb295464ea83888b9fb97fce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: createCursor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526658405433691841, guid: da2d40b1cb295464ea83888b9fb97fce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AutoCursors, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526658405433691841, guid: da2d40b1cb295464ea83888b9fb97fce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533833594998101660, guid: da2d40b1cb295464ea83888b9fb97fce, type: 3}
+      propertyPath: m_VerticalFit
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7207749606000279106, guid: da2d40b1cb295464ea83888b9fb97fce, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -230,7 +258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3733300287172495399, guid: 8b3966bc23314b74ab08d27c8aa3e12e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 188.47
+      value: -299.4
       objectReference: {fileID: 0}
     - target: {fileID: 3733300287172495399, guid: 8b3966bc23314b74ab08d27c8aa3e12e, type: 3}
       propertyPath: m_AnchoredPosition.y

@@ -28,5 +28,9 @@ public class Cursor : MonoBehaviour
 
     void click() {
         animator.Play("Base Layer.click");
+        Invoke("tryAddToCounter",.1f);
+    }
+    void tryAddToCounter() {
+        ClickCounter.Instance.addClick();
     }
 }
