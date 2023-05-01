@@ -540,6 +540,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7109955412552694983, guid: c4b3be80d220d48f9830d18383065508, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: addPlayerClick
+      objectReference: {fileID: 0}
     - target: {fileID: 7109955413779282086, guid: c4b3be80d220d48f9830d18383065508, type: 3}
       propertyPath: m_Name
       value: Website Canvas
@@ -688,6 +692,10 @@ PrefabInstance:
     - target: {fileID: 2895507269612485246, guid: d4285ec10db588d4791bed368e9f3cff, type: 3}
       propertyPath: m_Name
       value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895507269854410720, guid: d4285ec10db588d4791bed368e9f3cff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.76
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4285ec10db588d4791bed368e9f3cff, type: 3}
