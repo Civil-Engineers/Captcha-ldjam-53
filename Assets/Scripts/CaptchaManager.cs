@@ -31,6 +31,8 @@ public class CaptchaManager : MonoBehaviour
     private static int y_lim = 79;
     private static int maxWindows = 5;
 
+    private bool wareDownloaded = false; 
+
     void Awake()
     {
         if (Instance != null) {
@@ -50,36 +52,37 @@ public class CaptchaManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentLvl < maxLvl) {
+        if (currentLvl < maxLvl && wareDownloaded) {
             int numClicks = clickCounter.getTotalNumClicks();
             
             // start repeating captchas
             if (!isLvl_1 && numClicks >= LVL_1_CLICKS) {
                 isLvl_1 = true;
-                InvokeRepeating("daOneClickCaptcha", countdown, LVL_1_COUNT);
+                InvokeRepeating("daOneClickCaptcha", 0.2f, LVL_1_COUNT);
             } else if (!isLvl_2 && numClicks >= LVL_2_CLICKS) {
                 isLvl_2 = true;
-                InvokeRepeating("daTextCaptcha", countdown, LVL_2_COUNT);
+                InvokeRepeating("daTextCaptcha", 5f, LVL_2_COUNT);
             } else if (!isLvl_3 && numClicks >= LVL_3_CLICKS) {
                 isLvl_3 = true;
-                InvokeRepeating("daImageCaptcha", countdown, LVL_3_COUNT);
+                InvokeRepeating("daImageCaptcha", 10f, LVL_3_COUNT);
             }
 
             // cancel repeating captchas when you fall under click threshold
             // TODO llolllllololoololololololollololololl
         }
-        // bool windowPause = false;
-        // manageWindows(windowPause);
+        manageWindows();
     }
+    
+    bool windowPause = false;
 
-    private void manageWindows(bool windowPause) {    
+    private void manageWindows() {    
         if (numActiveCaptchas > maxWindows) {
             CancelInvoke("daTextCaptcha");
             CancelInvoke("daImageCaptcha");
             windowPause = true;
         }
 
-        if (numActiveCaptchas == 0 && windowPause) {
+        if (numActiveCaptchas == 0 && windowPause && wareDownloaded) {
             if (isLvl_1) {
                 InvokeRepeating("daOneClickCaptcha", countdown, LVL_1_COUNT);
             } if (isLvl_2) {
@@ -129,5 +132,21 @@ public class CaptchaManager : MonoBehaviour
 
     public int getNumCaptchas() {
         return numActiveCaptchas;
+    }
+
+    public int getLvl1Clicks() {
+        return LVL_1_CLICKS;
+    }
+
+    public int getLvl2Clicks() {
+        return LVL_2_CLICKS;
+    }
+
+    public int getLvl3Clicks() {
+        return LVL_3_CLICKS;
+    }
+    
+    public void downloadFirstWare() {
+        wareDownloaded = true;
     }
 }

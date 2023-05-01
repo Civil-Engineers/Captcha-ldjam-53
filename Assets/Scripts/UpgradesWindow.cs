@@ -5,7 +5,7 @@ using UnityEngine;
 public class UpgradesWindow : MonoBehaviour
 {
     public static UpgradesWindow Instance { get; private set; }
-    private int[] baseCost = {5, 10, 20, 800, 1200};
+    private int[] baseCost = {5, 10, 20, 100, 1200};
     // private int[] baseCost = {25, 50, 300, 800, 1200};
 
     private int[] level = {0, 0, 0, 0, 0};
@@ -15,6 +15,11 @@ public class UpgradesWindow : MonoBehaviour
     private float incRate = 1.15f;
     private int shownWares = 1;
     [SerializeField] private Wares[] wares = new Wares[5];
+
+    bool wareDownloaded = false;
+    bool lvl_1 = false;
+    bool lvl_2 = false;
+    bool lvl_3 = false; 
     
     // Start is called before the first frame update
     void Start()
@@ -36,7 +41,7 @@ public class UpgradesWindow : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        
+        updateWares();
     }
 
     public void tryBuy(int slot) {
@@ -52,11 +57,33 @@ public class UpgradesWindow : MonoBehaviour
         
     }
 
-    void buy(int slot) {
-        int slotLevel = level[slot];
-        if (slotLevel == 0) {
+    void updateWares() {
+        CaptchaManager cm = CaptchaManager.Instance;
+        ClickCounter cc = ClickCounter.Instance;
+
+        int numClicks = cc.getTotalNumClicks();
+        if (numClicks >= cm.getLvl1Clicks() && !lvl_1) {
             showMoreWares();
+            lvl_1 = true; // special cursor
+        } else if (numClicks >= cm.getLvl2Clicks() && !lvl_2) {
+            showMoreWares();
+            lvl_2 = true; // monkeytype
+        } else if (numClicks >= cm.getLvl3Clicks() && !lvl_3) {
+            showMoreWares();
+            lvl_3 = true; // pictopal
         }
+    }
+
+    void buy(int slot) {
+        if (wareDownloaded == false) {
+            wareDownloaded = true;
+            CaptchaManager.Instance.downloadFirstWare();
+        }
+
+        int slotLevel = level[slot];
+        // if (slotLevel == 0) {
+        //     showMoreWares();
+        // }
         slotLevel++;
         switch(slot) {
             case 0: 
@@ -86,6 +113,9 @@ public class UpgradesWindow : MonoBehaviour
                     //MonkeyType.setActive
                 }
                 break;
+            case 3:
+                wares[slot].setTitle("PictoPal MK. "+(slotLevel+1));
+                break;
                 
         }
     }
@@ -110,10 +140,10 @@ public class UpgradesWindow : MonoBehaviour
 
     public void toggleWindowVisibility() {
         float a = this.GetComponent<CanvasGroup>().alpha;
-        if (a == 1f) { //visible
+        if (a == 1f) { //visible => invisible
             this.GetComponent<CanvasGroup>().alpha = 0f;
             this.GetComponent<CanvasGroup>().interactable = false;
-        } else {
+        } else { // invisible => visible
             this.GetComponent<CanvasGroup>().interactable = true;
             this.GetComponent<CanvasGroup>().alpha = 1f;
         }
