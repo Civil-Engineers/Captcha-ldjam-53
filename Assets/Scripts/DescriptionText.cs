@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class DescriptionText : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Invoke("UpdateParentLayoutGroup", 0.01f);
     }

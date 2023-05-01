@@ -1311,20 +1311,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Upgrades
       objectReference: {fileID: 0}
-    - target: {fileID: 4275856901019057240, guid: f659de92c1123fc40848085311e10889, type: 3}
+    - target: {fileID: 2881560940943895456, guid: f659de92c1123fc40848085311e10889, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4275856901019057240, guid: f659de92c1123fc40848085311e10889, type: 3}
+    - target: {fileID: 2881560940943895456, guid: f659de92c1123fc40848085311e10889, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4275856901019057240, guid: f659de92c1123fc40848085311e10889, type: 3}
-      propertyPath: m_SizeDelta.y
+    - target: {fileID: 7826544042485050767, guid: f659de92c1123fc40848085311e10889, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8465092616643230550, guid: f659de92c1123fc40848085311e10889, type: 3}
-      propertyPath: m_SizeDelta.y
+    - target: {fileID: 7826544042485050767, guid: f659de92c1123fc40848085311e10889, type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
