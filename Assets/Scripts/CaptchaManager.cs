@@ -61,10 +61,10 @@ public class CaptchaManager : MonoBehaviour
                 InvokeRepeating("daOneClickCaptcha", 0.2f, LVL_1_COUNT);
             } else if (!isLvl_2 && numClicks >= LVL_2_CLICKS) {
                 isLvl_2 = true;
-                InvokeRepeating("daTextCaptcha", 5f, LVL_2_COUNT);
+                InvokeRepeating("daTextCaptcha", LVL_2_COUNT/2f, LVL_2_COUNT);
             } else if (!isLvl_3 && numClicks >= LVL_3_CLICKS) {
                 isLvl_3 = true;
-                InvokeRepeating("daImageCaptcha", 10f, LVL_3_COUNT);
+                InvokeRepeating("daImageCaptcha", LVL_3_COUNT/2f, LVL_3_COUNT);
             }
 
             // cancel repeating captchas when you fall under click threshold
@@ -82,7 +82,7 @@ public class CaptchaManager : MonoBehaviour
             windowPause = true;
         }
 
-        if (numActiveCaptchas == 0 && windowPause && wareDownloaded) {
+        if (numActiveCaptchas <= 0 && windowPause && wareDownloaded) {
             if (isLvl_1) {
                 InvokeRepeating("daOneClickCaptcha", countdown, LVL_1_COUNT);
             } if (isLvl_2) {
@@ -91,6 +91,37 @@ public class CaptchaManager : MonoBehaviour
                 InvokeRepeating("daImageCaptcha", countdown, LVL_3_COUNT);
             }
             windowPause = false;
+        }
+    }
+
+    int difficultyGoal = 10;
+    public void manageDifficulty() {
+        // compares num clicks
+        int numClicks = clickCounter.getTotalNumClicks();
+        if (numClicks % difficultyGoal == 0) {
+            increaseDifficulty();
+        }
+    }
+
+    float difficultyModifier = 1;
+    float rateOfChange = 0.01f;
+    float minDifficulty = 0.1f;
+    private void increaseDifficulty() {
+        difficultyModifier -= rateOfChange;
+        if (LVL_1_COUNT > minDifficulty) {
+            LVL_1_COUNT *= difficultyModifier;
+        } else {
+            LVL_1_COUNT = minDifficulty;
+        }
+        if (LVL_2_COUNT > minDifficulty) {
+            LVL_2_COUNT *= difficultyModifier;
+        } else {
+            LVL_2_COUNT = minDifficulty;
+        }
+        if (LVL_3_COUNT > minDifficulty) {
+            LVL_3_COUNT *= difficultyModifier;
+        } else {
+            LVL_3_COUNT = minDifficulty;
         }
     }
 
@@ -125,9 +156,7 @@ public class CaptchaManager : MonoBehaviour
     }
 
     public void deactivateCaptcha() {
-        if (numActiveCaptchas > 0) {
-             numActiveCaptchas--;
-        }
+        numActiveCaptchas--;
     }
 
     public int getNumCaptchas() {
