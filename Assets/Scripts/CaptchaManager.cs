@@ -8,28 +8,28 @@ public class CaptchaManager : MonoBehaviour
     public static CaptchaManager Instance { get; private set; }
 
     public int numActiveCaptchas = 0;
-
-    public GameObject clickCaptcha;
-    public GameObject textCaptcha;
     
-    ClickCounter clickCounter;
+    private ClickCounter clickCounter;
 
-    public static int LVL_1_CLICKS;
-    public static int LVL_2_CLICKS;
+    public static int LVL_1_CLICKS = 10;
+    public static int LVL_2_CLICKS = 20;
+    public static int LVL_3_CLICKS = 30;
 
-    int currentLvl = 0;
-    int maxLvl = 2;
+    private int currentLvl = 0;
+    private int maxLvl = 3;
 
-    bool isLvl_1 = false;
-    bool isLvl_2 = false;
+    private bool isLvl_1 = false; // one-click txtCaptcha
+    private bool isLvl_2 = false; // text gen txtCaptcha
+    private bool isLvl_3 = false; // image gen txtCaptcha
 
-    static float countdown = 0.2f;
-    static float LVL_1_COUNT = 10;
-    static float LVL_2_COUNT = 15;
+    private static float countdown = 0.2f;
+    private static float LVL_1_COUNT = 10;
+    private static float LVL_2_COUNT = 15;
+    private static float LVL_3_COUNT = 20;
 
-    static int x_lim = 270;
-    static int y_lim = 79;
-    static int maxWindows = 10;
+    private static int x_lim = 270;
+    private static int y_lim = 79;
+    private static int maxWindows = 10;
 
     void Awake()
     {
@@ -46,8 +46,6 @@ public class CaptchaManager : MonoBehaviour
     void Start()
     {
         clickCounter = gameObject.GetComponent<ClickCounter>();
-        LVL_1_CLICKS = clickCounter.LVL_1;
-        LVL_2_CLICKS = clickCounter.LVL_2;
     }
 
     // Update is called once per frame
@@ -63,16 +61,42 @@ public class CaptchaManager : MonoBehaviour
             } else if (!isLvl_2 && numClicks >= LVL_2_CLICKS) {
                 isLvl_2 = true;
                 InvokeRepeating("daTextCaptcha", countdown, LVL_2_COUNT);
+            } else if (!isLvl_3 && numClicks >= LVL_3_CLICKS) {
+                isLvl_3 = true;
+                InvokeRepeating("daImageCaptcha", countdown, LVL_3_COUNT);
             }
 
             // cancel repeating captchas when you fall under click threshold
             // TODO llolllllololoololololololollololololl
         }
 
+        manageWindows();
+    }
+
+    private void manageWindows() {
+        bool windowPause = false;
+    
         if (numActiveCaptchas > maxWindows) {
             CancelInvoke("daTextCaptcha");
+            CancelInvoke("daImageCaptcha");
+            windowPause = true;
+        }
+
+        if (numActiveCaptchas == 0 && windowPause) {
+            if (isLvl_1) {
+                InvokeRepeating("daOneClickCaptcha", countdown, LVL_1_COUNT);
+            } if (isLvl_2) {
+                InvokeRepeating("daTextCaptcha", countdown, LVL_2_COUNT);
+            } if (isLvl_3) {
+                InvokeRepeating("daImageCaptcha", countdown, LVL_3_COUNT);
+            }
+            windowPause = false;
         }
     }
+
+    public GameObject clickCaptcha;
+    public GameObject textCaptcha;
+    public GameObject imageCaptcha;
 
     void daOneClickCaptcha() {
         if(!clickCaptcha.gameObject.activeSelf) {
@@ -84,8 +108,16 @@ public class CaptchaManager : MonoBehaviour
         float randomX = Random.Range(-x_lim, x_lim);
         float randomY = Random.Range(-y_lim, y_lim);
         activateCaptcha();
-        GameObject captcha = Instantiate(textCaptcha, new Vector3(randomX, randomY, 0), Quaternion.identity);
-        captcha.transform.SetParent (this.transform.parent, false);
+        GameObject txtCaptcha = Instantiate(textCaptcha, new Vector3(randomX, randomY, 0), Quaternion.identity);
+        txtCaptcha.transform.SetParent (this.transform.parent, false);
+    }
+
+    void daImageCaptcha() {
+        float randomX = Random.Range(-x_lim, x_lim);
+        float randomY = Random.Range(-y_lim, y_lim);
+        activateCaptcha();
+        GameObject imgCaptcha = Instantiate(imageCaptcha, new Vector3(randomX, randomY, 0), Quaternion.identity);
+        imgCaptcha.transform.SetParent (this.transform.parent, false);
     }
 
     public void activateCaptcha() {

@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using DG.Tweening;
 
 public class ImageCaptcha : MonoBehaviour
 {
+    public TextMeshProUGUI errorText;
+    public TextMeshProUGUI OKText;
+
     private string imageTag;
     private List<Image> choices;
     private const int numberOfChoices = 4;
-    [SerializeField] private TMPro.TextMeshProUGUI text;
+    [SerializeField] private TextMeshProUGUI text;
 
     [SerializeField] private ImageSelect[] selection = new ImageSelect[4];
 
@@ -15,7 +20,7 @@ public class ImageCaptcha : MonoBehaviour
     
     void Start()
     {
-        text = GetComponentInChildren<TMPro.TextMeshProUGUI>();
+        text = GetComponentInChildren<TextMeshProUGUI>();
         Reset();
     }
 
@@ -61,17 +66,20 @@ public class ImageCaptcha : MonoBehaviour
             if (choices[i].hasImageTag(imageTag)) {
                 if(!selection[i].getToggle()) {
                     // wrong
+                    StartCoroutine("displayError");
                     Reset();
                     return;
                 }
             } else if (selection[i].getToggle()) {
                 // wrong
+                StartCoroutine("displayError");
                 Reset();
                 return;
             }
         }
         text.text = "Success!";
-        Debug.Log("good job");
+        StartCoroutine("closeWindow");
+        // Debug.Log("good job");
     }
 
     // Update is called once per frame
@@ -79,5 +87,19 @@ public class ImageCaptcha : MonoBehaviour
     {
     }
 
+    IEnumerator displayError() {
+        errorText.DOFade(1,0);
+        errorText.gameObject.SetActive(true);
+        errorText.DOFade (0,1f);
+        yield return new WaitForSeconds(1f);
+        errorText.gameObject.SetActive(false);
+    }
+
+    IEnumerator closeWindow() {
+        // OKText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.4f);
+        CaptchaManager.Instance.deactivateCaptcha();
+        Destroy(gameObject);
+    }
     
 }

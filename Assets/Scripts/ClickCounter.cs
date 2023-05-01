@@ -10,8 +10,15 @@ public class ClickCounter : MonoBehaviour {
     public TMPro.TextMeshProUGUI counter;
     public GameObject ClickCaptcha;
 
-    public int LVL_1 = 10;
-    public int LVL_2 = 20;
+    void Awake()
+    {
+        if (Instance != null) {
+            Debug.LogError("There is more than one instance!");
+        return;
+        }
+
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
