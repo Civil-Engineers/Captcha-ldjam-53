@@ -50,21 +50,26 @@ public class DesktopBuddy : MonoBehaviour
     }
 
     public static void captchaTry() {
-        foreach(DesktopBuddy b in buddies) {
-            b.idling = false;
-            b.transform.DOKill();
-            b.transform.DORotate(new Vector3(0,0,0), 0);
-            b.animator.Play("base.think");
+        if(buddies != null) {
+            foreach(DesktopBuddy b in buddies) {
+                b.idling = false;
+                b.transform.DOKill();
+                b.transform.DORotate(new Vector3(0,0,0), 0);
+                b.animator.Play("base.think");
+            }
         }
+        
     }
 
     public static void captchaAllSolve() {
-        foreach(DesktopBuddy b in buddies) {
-            b.idling = false;
-            b.transform.DOKill();
-            b.animator.Play("base.yaya");
-            Sequence t1 = b.transform.DOLocalJump(b.transform.localPosition, 4,2,2);
-            t1.AppendCallback(()=>{b.idling = true;b.Idle();});
+        if(buddies != null) {
+            foreach(DesktopBuddy b in buddies) {
+                b.idling = false;
+                b.transform.DOKill();
+                b.animator.Play("base.yaya");
+                Sequence t1 = b.transform.DOLocalJump(b.transform.localPosition, 4,2,2);
+                t1.AppendCallback(()=>{b.idling = true;b.Idle();});
+            }
         }
     }
 }
