@@ -55,7 +55,7 @@ MonoBehaviour:
     imageTags: []
   - sprite: {fileID: 21300000, guid: 922ec96b98edfe14b958575cbd324982, type: 3}
     imageTags:
-    - Animal
+    - Animals
   - sprite: {fileID: 21300000, guid: cdbced8f2e4afbc4798e46f196c0afae, type: 3}
     imageTags:
     - Animals
@@ -66,11 +66,17 @@ MonoBehaviour:
     imageTags: []
   - sprite: {fileID: 21300000, guid: 66b5df1d60158c14e886ba4ac938b0f3, type: 3}
     imageTags:
-    - Animal
+    - Animals
   - sprite: {fileID: 21300000, guid: 493b3a8364f936b45b4ba033c2d5f9bb, type: 3}
     imageTags: []
   - sprite: {fileID: 21300000, guid: 003e2f4c83a3e6a468106ed058f558f3, type: 3}
     imageTags: []
   - sprite: {fileID: 21300000, guid: 6411dfa11eab3084db736fb71ec362e2, type: 3}
+    imageTags:
+    - 
+  - sprite: {fileID: 21300000, guid: 9bf879108765e5e4e94ceb24140c7f6a, type: 3}
+    imageTags:
+    - Bus
+  - sprite: {fileID: 21300000, guid: 2a8b814a3a22fcf448963b07bb457d8b, type: 3}
     imageTags:
     - Food
