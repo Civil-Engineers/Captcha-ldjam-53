@@ -18,6 +18,10 @@ public class TextCaptcha : MonoBehaviour
 
     private Tween fadeTween;
     private TexMex currentCaptcha;
+    private float timeFromShift = 0;
+    private float baseShiftTime = .4f;
+    private float timeFromSolve = 0;
+    private float timeToFinishSolve = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +33,20 @@ public class TextCaptcha : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        int level = UpgradesWindow.Instance.getMonkeyLevel();
+        if(level > 0) {
+            timeFromShift += Time.deltaTime;
+            timeFromSolve += Time.deltaTime;
+            if(timeFromShift > baseShiftTime*Mathf.Pow(.75f,level)) {
+                inputField.text = RandomStringGenerator(currentCaptcha.Value.Length);
+                timeFromShift=0;
+            }
+            if(timeFromSolve > timeToFinishSolve*Mathf.Pow(.75f,level)) {
+                inputField.text = currentCaptcha.Value;
+                StartCoroutine(displayOKAndDestroy());
+            }
+        }
+        
     }
 
     private void GenerateCaptcha() {
@@ -37,6 +54,17 @@ public class TextCaptcha : MonoBehaviour
 
         // change UI
         codeImage.sprite = currentCaptcha.Image;
+    }
+
+    private string RandomStringGenerator(int length)
+    {
+        string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        string generated_string = "";
+
+        for(int i = 0; i < length; i++)
+            generated_string += characters[Random.Range(0, characters.Length)];
+
+        return generated_string;
     }
 
     bool isValid(string fieldValue) {

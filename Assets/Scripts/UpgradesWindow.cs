@@ -5,7 +5,7 @@ using UnityEngine;
 public class UpgradesWindow : MonoBehaviour
 {
     public static UpgradesWindow Instance { get; private set; }
-    private int[] baseCost = {5, 10, 300, 800, 1200};
+    private int[] baseCost = {5, 10, 20, 800, 1200};
     // private int[] baseCost = {25, 50, 300, 800, 1200};
 
     private int[] level = {0, 0, 0, 0, 0};
@@ -75,9 +75,15 @@ public class UpgradesWindow : MonoBehaviour
                 AutoCursors.Instance.createCursor();
                 break;
             case 1:
-                wares[slot].setTitle("Custom Cursor Version "+slotLevel);
+                wares[slot].setTitle("Custom Cursor Version "+(slotLevel+1));
                 if(slotLevel < 10) {
                     UnityEngine.Cursor.SetCursor(cursors[slotLevel], Vector2.zero, CursorMode.Auto);
+                }
+                break;
+            case 2:
+                wares[slot].setTitle("MonkeyType Version "+(slotLevel+1));
+                if(slotLevel == 1) {
+                    //MonkeyType.setActive
                 }
                 break;
                 
@@ -93,5 +99,8 @@ public class UpgradesWindow : MonoBehaviour
 
     public int getCursorLevel(){
         return level[1];
+    }
+    public int getMonkeyLevel(){
+        return level[2];
     }
 }
