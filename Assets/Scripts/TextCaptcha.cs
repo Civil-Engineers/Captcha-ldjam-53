@@ -37,26 +37,20 @@ public class TextCaptcha : MonoBehaviour
         errorText.gameObject.SetActive(false);
     }
     
-    IEnumerator displayOKAndExit() {
+    IEnumerator displayOKAndDestroy() {
         OKText.DOFade(1,0);
         OKText.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.4f);
-        // OKText.gameObject.SetActive(false);
+        CaptchaManager.Instance.deactivateCaptcha();
         Destroy(gameObject);
-    }
-
-    IEnumerator destroyThis() {
-        yield return new WaitForSeconds(1f);
-        
     }
 
     void validateAndSubmit(string fieldValue) {
         if (isInvalid(fieldValue)) {
-            Debug.Log("invalid meep");
             StartCoroutine(displayError());
             return;
         } else {
-            StartCoroutine(displayOKAndExit());
+            StartCoroutine(displayOKAndDestroy());
             return;
         }
     }

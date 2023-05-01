@@ -35,7 +35,7 @@ public class OneClickCaptcha : MonoBehaviour
     void OnEnable() {
         Tween showTween = fadeAll(1, fadeInTime);
         showTween.OnComplete(
-            () =>   ClickManager.Instance.activateCaptcha()
+            () =>   CaptchaManager.Instance.activateCaptcha()
         );
         Debug.Log("hello");
     }
@@ -45,6 +45,7 @@ public class OneClickCaptcha : MonoBehaviour
         box.DOKill();
         check.DOKill();
         toggle.isOn = false;
+        toggle.interactable = true;
     }
 
     private void setImageAlpha(UnityEngine.UI.Image img, int alpha) {
@@ -60,9 +61,10 @@ public class OneClickCaptcha : MonoBehaviour
     }
 
     void stopCaptcha() {
+        toggle.interactable = false;
         Tween hideTween = fadeAll(0, fadeOutTime);
-        ClickManager.Instance.deactivateCaptcha();
-
+        CaptchaManager.Instance.deactivateCaptcha();
+        Debug.Log("a");
         hideTween.OnComplete (
             () => {
                 this.gameObject.SetActive(false);
@@ -71,6 +73,8 @@ public class OneClickCaptcha : MonoBehaviour
     }
 
     public void deactivateCaptcha() {
-        stopCaptcha();
+        if(toggle && toggle.isOn) {
+            stopCaptcha();
+        }
     }
 }
