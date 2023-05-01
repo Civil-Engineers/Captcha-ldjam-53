@@ -29,7 +29,7 @@ public class CaptchaManager : MonoBehaviour
 
     private static int x_lim = 270;
     private static int y_lim = 79;
-    private static int maxWindows = 10;
+    private static int maxWindows = 5;
 
     void Awake()
     {

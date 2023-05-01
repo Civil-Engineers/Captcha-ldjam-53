@@ -48,6 +48,11 @@ public class TextCaptcha : MonoBehaviour
         }
         
     }
+    
+    void OnDestroy() {
+        errorText.DOKill();
+        // OKText.DOKill();
+    }
 
     private void GenerateCaptcha() {
         currentCaptcha = textGenerator.Generate();
