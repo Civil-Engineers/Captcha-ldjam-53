@@ -540,9 +540,25 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7109955412552694976, guid: c4b3be80d220d48f9830d18383065508, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109955412552694976, guid: c4b3be80d220d48f9830d18383065508, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -108
+      objectReference: {fileID: 0}
     - target: {fileID: 7109955412552694983, guid: c4b3be80d220d48f9830d18383065508, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: addPlayerClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109955412679104276, guid: c4b3be80d220d48f9830d18383065508, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109955412679104283, guid: c4b3be80d220d48f9830d18383065508, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7109955413779282086, guid: c4b3be80d220d48f9830d18383065508, type: 3}
       propertyPath: m_Name
@@ -645,6 +661,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2895507268781669770, guid: d4285ec10db588d4791bed368e9f3cff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.39
+      objectReference: {fileID: 0}
     - target: {fileID: 2895507269612485244, guid: d4285ec10db588d4791bed368e9f3cff, type: 3}
       propertyPath: m_RootOrder
       value: 1
