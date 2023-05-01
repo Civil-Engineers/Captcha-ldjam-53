@@ -16,8 +16,6 @@ public class TextCaptcha : MonoBehaviour
     void Start()
     {
         inputField = GetComponentInChildren<TMP_InputField>();
-        errorText.gameObject.SetActive(false);
-        OKText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame

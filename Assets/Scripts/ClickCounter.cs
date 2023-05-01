@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class ClickCounter : MonoBehaviour {
 
-    public static int clickCount = 0;
+    public int clickCount = 0;
     public TMPro.TextMeshProUGUI counter;
-    public GameObject clickCaptcha;
+    public GameObject ClickCaptcha;
 
-    static int LVL_1 = 10;
-    static int LVL_2 = 100;
+    public int LVL_1 = 10;
+    public int LVL_2 = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -25,16 +25,16 @@ public class ClickCounter : MonoBehaviour {
     }
 
     bool validClick() {
-        if (clickCount >= LVL_1) {
-            clickCaptcha.gameObject.SetActive(true);
-            return false;
-        }
-        return true;
+        return (ClickManager.Instance.getNumCaptchas() == 0);
     }
 
     public void addClick() {
         if (validClick()) {
             clickCount++;
         }
+    }
+
+    public int getNumClicks() {
+        return clickCount;
     }
 }
