@@ -24,6 +24,8 @@ public class Wares : MonoBehaviour
     
     public void setDescription(string s) {
         Description.text = s;
+        // Description.transform.parent.gameObject.SetActive(false);
+        // Description.transform.parent.gameObject.SetActive(true);
     }
 
     public void setTitle(string s) {

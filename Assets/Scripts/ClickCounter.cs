@@ -62,6 +62,13 @@ public class ClickCounter : MonoBehaviour {
         }
     }
 
+    public void addPlayerClick() {
+        if (validClick()) {
+            clickCount += 1 + UpgradesWindow.Instance.getCursorLevel();
+            totalClickCount += 1 + UpgradesWindow.Instance.getCursorLevel();
+        }
+    }
+
     public void addNumClicks(int num) {
         if (validClick()) {
             clickCount+=num;
