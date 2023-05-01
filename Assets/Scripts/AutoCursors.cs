@@ -5,6 +5,16 @@ using UnityEngine;
 public class AutoCursors : MonoBehaviour
 {
     public GameObject cursorPrefab;
+    public static AutoCursors Instance { get; private set; }
+    void Awake()
+    {
+        if (Instance != null) {
+            Debug.LogError("There is more than one instance!");
+        return;
+        }
+
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
