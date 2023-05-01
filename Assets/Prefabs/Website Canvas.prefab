@@ -235,6 +235,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7742747196791103487, guid: f659de92c1123fc40848085311e10889, type: 3}
+        m_TargetAssemblyTypeName: UpgradesWindow, Assembly-CSharp
+        m_MethodName: toggleWindowVisibility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 3765928468773337816}
         m_TargetAssemblyTypeName: Window, Assembly-CSharp
         m_MethodName: bringToFront
@@ -639,7 +651,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.2, y: -102}
+  m_AnchoredPosition: {x: 0, y: -108}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7109955412552694981
@@ -726,7 +738,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3111224184540033691}
         m_TargetAssemblyTypeName: ClickCounter, Assembly-CSharp
-        m_MethodName: addClick
+        m_MethodName: addPlayerClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -773,7 +785,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.3, y: -153.9}
+  m_AnchoredPosition: {x: 0, y: -153.9}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7109955412679104281
@@ -1309,6 +1321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4635525512235344315}
+  - component: {fileID: 972335804}
   m_Layer: 5
   m_Name: TaskBar
   m_TagString: Untagged
@@ -1337,6 +1350,19 @@ RectTransform:
   m_AnchoredPosition: {x: 4, y: -0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &972335804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988077073358622955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd162aade4a244cc99f3fbaf7dd2db7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grimmIcon: {fileID: 6079092287411805011}
 --- !u!1001 &288409956259425990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1602,6 +1628,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2881560940943895456, guid: f659de92c1123fc40848085311e10889, type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275856901019057240, guid: f659de92c1123fc40848085311e10889, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797454930891848422, guid: f659de92c1123fc40848085311e10889, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797454930891848422, guid: f659de92c1123fc40848085311e10889, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797454930891848422, guid: f659de92c1123fc40848085311e10889, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963526194932289862, guid: f659de92c1123fc40848085311e10889, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963526194932289862, guid: f659de92c1123fc40848085311e10889, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963526194932289862, guid: f659de92c1123fc40848085311e10889, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7826544042485050767, guid: f659de92c1123fc40848085311e10889, type: 3}
