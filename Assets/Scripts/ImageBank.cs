@@ -10,7 +10,7 @@ public class ImageBank : MonoBehaviour
     static List<string> tags = new List<string>{
         "is a Animal", "Has a Soul",
         "you can take in a fight", "can fit in your mouth",
-        "has Metal", "is an accessory"
+         "is an accessory"
     };
     static List<string> strangeTags = new List<string>{
         "a Soul",
