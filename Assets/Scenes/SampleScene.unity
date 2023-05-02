@@ -282,6 +282,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6607571001251803363, guid: c4b3be80d220d48f9830d18383065508, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6610376324265930417, guid: c4b3be80d220d48f9830d18383065508, type: 3}
       propertyPath: spawnParent
       value: 
@@ -290,6 +294,22 @@ PrefabInstance:
       propertyPath: desktopBuddyPrefab
       value: 
       objectReference: {fileID: 2114654877914451484, guid: e74e4948a02b9409dbe6241ebae837e8, type: 3}
+    - target: {fileID: 6652518025748683969, guid: c4b3be80d220d48f9830d18383065508, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6652518025748683969, guid: c4b3be80d220d48f9830d18383065508, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970366300384283560, guid: c4b3be80d220d48f9830d18383065508, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970366300384283560, guid: c4b3be80d220d48f9830d18383065508, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7109955413779282086, guid: c4b3be80d220d48f9830d18383065508, type: 3}
       propertyPath: m_Name
       value: Website Canvas
@@ -376,6 +396,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7109955413779282090, guid: c4b3be80d220d48f9830d18383065508, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447550861991569290, guid: c4b3be80d220d48f9830d18383065508, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

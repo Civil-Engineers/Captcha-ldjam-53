@@ -15,6 +15,8 @@ public class ClickCounter : MonoBehaviour {
     private static int maxClicks = 99999;
     private static int maxDigits = 5;
 
+    private bool heyBool = false; 
+
     void Awake()
     {
         if (Instance != null) {
@@ -49,6 +51,8 @@ public class ClickCounter : MonoBehaviour {
 
         string zeroes = new System.String('0', maxDigits-numDigits);
         counter.text =  zeroes + clickCount;
+
+
     }
 
     bool validClick() {
@@ -60,6 +64,11 @@ public class ClickCounter : MonoBehaviour {
             clickCount++;
             totalClickCount++;
             CaptchaManager.Instance.manageDifficulty();
+            
+            if (!heyBool && clickCount >= 10) {
+                UpgradesWindow.Instance.toggleWindowVisibility();
+                heyBool = true;
+        }
         }
     }
 
