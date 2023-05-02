@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-
+using UnityEngine.SceneManagement;
 
 
 public class ClickCounter : MonoBehaviour {
@@ -24,6 +24,8 @@ public class ClickCounter : MonoBehaviour {
     private UnityEngine.UI.Image hey;
     public GameObject NewWares;
     public GameObject Hey;
+
+    int finalMeep = 1000;
 
     void Awake()
     {
@@ -47,6 +49,10 @@ public class ClickCounter : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (clickCount >= finalMeep) {
+            SceneManager.LoadScene("ending");
+        }
+
         int numDigits;
         if (clickCount <= 9) {
             numDigits = 1;

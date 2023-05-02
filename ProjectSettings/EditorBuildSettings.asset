@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/meepmoop.unity
-    guid: 84a22898642ac474ea6bb13ecd58fcdf
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/ending.unity
+    guid: 7508579e608754e539577df46295a830
   m_configObjects: {}
