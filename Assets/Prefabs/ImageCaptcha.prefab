@@ -1966,7 +1966,7 @@ PrefabInstance:
     - target: {fileID: 3733300287172495398, guid: 8b3966bc23314b74ab08d27c8aa3e12e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 115f2db28d53a894c949bd492a06ea46, type: 3}
+      objectReference: {fileID: 21300000, guid: ed35dfe90bdce9b4d818bf8a9e25ffb5, type: 3}
     - target: {fileID: 3733300287172495398, guid: 8b3966bc23314b74ab08d27c8aa3e12e, type: 3}
       propertyPath: m_RaycastPadding.w
       value: 0.96
@@ -2094,7 +2094,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2347672174291806701}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0

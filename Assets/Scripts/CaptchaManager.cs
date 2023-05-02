@@ -12,8 +12,8 @@ public class CaptchaManager : MonoBehaviour
     public ClickCounter clickCounter;
 
     public static int LVL_1_CLICKS = 10;
-    public static int LVL_2_CLICKS = 20;
-    public static int LVL_3_CLICKS = 30;
+    public static int LVL_2_CLICKS = 40;
+    public static int LVL_3_CLICKS = 300;
 
     private int currentLvl = 0;
     private int maxLvl = 3;
@@ -31,7 +31,7 @@ public class CaptchaManager : MonoBehaviour
     private static int y_lim = 79;
     private static int maxWindows = 5;
 
-    private bool wareDownloaded = false; 
+    public bool wareDownloaded = false; 
 
     void Awake()
     {
@@ -94,13 +94,16 @@ public class CaptchaManager : MonoBehaviour
         }
     }
 
-    int difficultyGoal = 10;
+    int lastClick = 0;
+    int difficultyGoal = 50;
     public void manageDifficulty() {
         // compares num clicks
         int numClicks = clickCounter.getTotalNumClicks();
-        if (numClicks % difficultyGoal == 0) {
+        if (numClicks-lastClick >=difficultyGoal) {
             increaseDifficulty();
+            lastClick = numClicks;
         }
+        
     }
 
     float difficultyModifier = 1;
@@ -157,7 +160,10 @@ public class CaptchaManager : MonoBehaviour
     }
 
     public void deactivateCaptcha() {
-        numActiveCaptchas--;
+        if(numActiveCaptchas>0) {
+            numActiveCaptchas--;
+        }
+        
     }
 
     public int getNumCaptchas() {

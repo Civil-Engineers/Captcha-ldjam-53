@@ -5,8 +5,8 @@ using UnityEngine;
 public class UpgradesWindow : MonoBehaviour
 {
     public static UpgradesWindow Instance { get; private set; }
-    private int[] baseCost = {5, 10, 20, 100, 1200};
-    // private int[] baseCost = {25, 50, 300, 800, 1200};
+    // private int[] baseCost = {5, 10, 20, 100, 1200};
+    private int[] baseCost = {10, 50, 180, 350, 1200};
 
     private int[] level = {0, 0, 0, 0, 0};
 
@@ -68,13 +68,18 @@ public class UpgradesWindow : MonoBehaviour
         if (numClicks >= cm.getLvl1Clicks() && !lvl_1) {
             showMoreWares();
             lvl_1 = true; // special cursor
-        } else if (numClicks >= cm.getLvl2Clicks() && !lvl_2) {
-            showMoreWares();
-            lvl_2 = true; // monkeytype
-        } else if (numClicks >= cm.getLvl3Clicks() && !lvl_3) {
-            showMoreWares();
-            lvl_3 = true; // pictopal
+        } 
+
+        if(cm.wareDownloaded) {
+            if (numClicks >= cm.getLvl2Clicks() && !lvl_2) {
+                showMoreWares();
+                lvl_2 = true; // monkeytype
+            } else if (numClicks >= cm.getLvl3Clicks() && !lvl_3) {
+                showMoreWares();
+                lvl_3 = true; // pictopal
+            }
         }
+        
     }
 
     void buy(int slot) {
