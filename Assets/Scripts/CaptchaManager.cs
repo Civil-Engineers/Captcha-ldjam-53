@@ -152,6 +152,7 @@ public class CaptchaManager : MonoBehaviour
     }
 
     public void activateCaptcha() {
+        GetComponent<AudioSource>().Play();
         numActiveCaptchas++;
     }
 
