@@ -11,7 +11,7 @@ public class OneClickCaptcha : MonoBehaviour
 
     private UnityEngine.UI.Toggle toggle;
 
-    private static float fadeInTime = 0.3f;
+    private static float fadeInTime = 0.15f;
     private static float fadeOutTime = 0.3f;
 
 
@@ -33,11 +33,8 @@ public class OneClickCaptcha : MonoBehaviour
     }
 
     void OnEnable() {
-        Tween showTween = fadeAll(1, fadeInTime);
         CaptchaManager.Instance.activateCaptcha();
-        // showTween.OnComplete(
-        //     () =>   CaptchaManager.Instance.activateCaptcha()
-        // );
+        Tween showTween = fadeAll(1, fadeInTime);
     }
 
     void OnDisable() {
