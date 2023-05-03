@@ -33,6 +33,9 @@ public class CaptchaManager : MonoBehaviour
 
     public bool wareDownloaded = false; 
 
+    private int numTxtCaptchasSolved = 0;
+    private int numImgCaptchasSolved = 0;
+
     void Awake()
     {
         if (Instance != null) {
@@ -155,7 +158,7 @@ public class CaptchaManager : MonoBehaviour
     }
 
     public void activateCaptcha() {
-        GetComponent<AudioSource>().Play();
+        // GetComponent<AudioSource>().Play();
         numActiveCaptchas++;
     }
 
@@ -183,6 +186,27 @@ public class CaptchaManager : MonoBehaviour
     }
     
     public void downloadFirstWare() {
+        StartCoroutine(waitAfterFirstDownload());
         wareDownloaded = true;
+    }
+
+    IEnumerator waitAfterFirstDownload() {
+        yield return new WaitForSeconds(5);
+    }
+
+    public void addSolvedTxt() {
+        numTxtCaptchasSolved++;
+    }
+
+    public void addSolvedImg() {
+        numImgCaptchasSolved++;
+    }
+
+    public int getSolvedImgCaptchas() {
+        return numImgCaptchasSolved;
+    }
+
+    public int getSolvedTxtCaptchas() {
+        return numTxtCaptchasSolved;
     }
 }
