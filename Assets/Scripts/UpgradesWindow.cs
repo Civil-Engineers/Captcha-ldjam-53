@@ -101,11 +101,11 @@ public class UpgradesWindow : MonoBehaviour
                     wares[slot].setTitle("Crazy Click Version "+(slotLevel-4));
                 }
                 
-                if(slotLevel == 4) {
-                    wares[slot].setDescription("Get a bot to click for you! => [update] captcha-killer");
-                } else if (slotLevel == 5) {
-                    wares[slot].setDescription("Get a bot to click for you!");
-                }
+                // if(slotLevel == 4) {
+                //     wares[slot].setDescription("Get a bot to click for you! => [update] captcha-killer");
+                // } else if (slotLevel == 5) {
+                //     wares[slot].setDescription("Get a bot to click for you!");
+                // }
 
                 AutoCursors.Instance.createCursor();
                 break;

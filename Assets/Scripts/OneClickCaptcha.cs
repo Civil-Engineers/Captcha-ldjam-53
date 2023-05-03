@@ -11,7 +11,7 @@ public class OneClickCaptcha : MonoBehaviour
 
     private UnityEngine.UI.Toggle toggle;
 
-    private static float fadeInTime = 0.15f;
+    private static float fadeInTime = 0.05f;
     private static float fadeOutTime = 0.3f;
 
 

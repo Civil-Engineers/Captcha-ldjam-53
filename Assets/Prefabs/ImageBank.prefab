@@ -49,19 +49,14 @@ MonoBehaviour:
     imageTags:
     - is a Animal
     - Has a Soul
-    - you can take in a fight
     - can fit in your mouth
-    - 
   - sprite: {fileID: 21300000, guid: a1493638810342144840f7f39e8789e6, type: 3}
     imageTags:
     - is a Food
-    - you can take in a fight
-    - can fit in your mouth
   - sprite: {fileID: 21300000, guid: 0037eb55616f40a4086dc533678b82a9, type: 3}
     imageTags:
     - is a Animal
     - Has a Soul
-    - you can take in a fight
   - sprite: {fileID: 21300000, guid: 922ec96b98edfe14b958575cbd324982, type: 3}
     imageTags:
     - is a Animal
@@ -70,35 +65,27 @@ MonoBehaviour:
     imageTags:
     - is a Animal
     - Has a Soul
-    - you can take in a fight
     - can fit in your mouth
   - sprite: {fileID: 21300000, guid: bf7dcc36a44dd974ea4dcbe72ba3e839, type: 3}
     imageTags:
     - is a Food
-    - you can take in a fight
     - can fit in your mouth
   - sprite: {fileID: 21300000, guid: 1970b6b52c5a4764180c39b4aca8a063, type: 3}
     imageTags:
     - has Metal
-    - you can take in a fight
   - sprite: {fileID: 21300000, guid: 66b5df1d60158c14e886ba4ac938b0f3, type: 3}
     imageTags:
     - is a Animal
     - Has a Soul
-    - you can take in a fight
   - sprite: {fileID: 21300000, guid: 493b3a8364f936b45b4ba033c2d5f9bb, type: 3}
     imageTags:
     - has Metal
     - you can take in a fight
-    - can fit in your mouth
   - sprite: {fileID: 21300000, guid: 003e2f4c83a3e6a468106ed058f558f3, type: 3}
     imageTags:
     - is an accessory
-    - you can take in a fight
-    - can fit in your mouth
   - sprite: {fileID: 21300000, guid: 6411dfa11eab3084db736fb71ec362e2, type: 3}
     imageTags:
-    - you can take in a fight
     - can fit in your mouth
   - sprite: {fileID: 21300000, guid: 9bf879108765e5e4e94ceb24140c7f6a, type: 3}
     imageTags:
@@ -107,52 +94,39 @@ MonoBehaviour:
   - sprite: {fileID: 21300000, guid: 2a8b814a3a22fcf448963b07bb457d8b, type: 3}
     imageTags:
     - is a Food
-    - you can take in a fight
     - can fit in your mouth
   - sprite: {fileID: 21300000, guid: 122be9f8a9f3b0a4bb27ec0ad3085104, type: 3}
     imageTags:
     - is a Food
-    - you can take in a fight
-    - can fit in your mouth
   - sprite: {fileID: 21300000, guid: 49ab4a986e182f849a836334693219a5, type: 3}
     imageTags:
     - is a Animal
     - Has a Soul
-    - you can take in a fight
   - sprite: {fileID: 21300000, guid: ba57b99faea45a84d8dca2deaf29edaf, type: 3}
     imageTags:
     - has Metal
-    - you can take in a fight
-    - can fit in your mouth
   - sprite: {fileID: 21300000, guid: aabae0c6f529d4c46adf85590b854840, type: 3}
-    imageTags:
-    - you can take in a fight
+    imageTags: []
   - sprite: {fileID: 21300000, guid: d9f31bb66f5222647bad396fc375b79e, type: 3}
     imageTags:
     - Has a Soul
-    - can fit in your mouth
   - sprite: {fileID: 21300000, guid: 8d9f3a03e63b8374e8e05cb1baeafa92, type: 3}
     imageTags:
     - is a Animal
-    - you can take in a fight
   - sprite: {fileID: 21300000, guid: 771ca68e117f6d140a927d456f34aa58, type: 3}
     imageTags:
     - is a Animal
     - Has a Soul
-    - you can take in a fight
   - sprite: {fileID: 21300000, guid: 38ff07a95d9e4694bbb04d72bfbc55dd, type: 3}
     imageTags:
     - has Metal
-    - you can take in a fight
     - can fit in your mouth
   - sprite: {fileID: 21300000, guid: 42ef4aa3231351943bd5e01b6c1646ce, type: 3}
     imageTags:
     - is an accessory
-    - you can take in a fight
   - sprite: {fileID: 21300000, guid: 6a37547debf830a4d807fc251b54720b, type: 3}
     imageTags:
     - is an accessory
-    - you can take in a fight
     - can fit in your mouth
   - sprite: {fileID: 21300000, guid: 10aa7efa9faabe64592bf0dcf79cdd70, type: 3}
     imageTags:
@@ -162,25 +136,20 @@ MonoBehaviour:
     imageTags:
     - is a Animal
     - Has a Soul
-    - you can take in a fight
   - sprite: {fileID: 21300000, guid: d1e7bc87cee91ef4da59cb4c3e25569f, type: 3}
     imageTags:
     - is a Animal
     - Has a Soul
-    - you can take in a fight
   - sprite: {fileID: 21300000, guid: fdf776c3f1d41be46b29301c79644818, type: 3}
     imageTags:
-    - you can take in a fight
     - can fit in your mouth
+    - is a Food
   - sprite: {fileID: 21300000, guid: 02e6abfa2d463b44bb9cde232507d461, type: 3}
     imageTags:
     - is a Animal
     - Has a Soul
-    - you can take in a fight
     - can fit in your mouth
   - sprite: {fileID: 21300000, guid: 75822b768100a1745a82118e64101e0b, type: 3}
     imageTags:
     - is a Food
-    - Has a Soul
-    - you can take in a fight
     - can fit in your mouth
