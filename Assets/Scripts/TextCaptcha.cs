@@ -26,6 +26,7 @@ public class TextCaptcha : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<AudioSource>().Play();
         GenerateCaptcha();
         inputField = GetComponentInChildren<TMP_InputField>();
     }
@@ -87,6 +88,7 @@ public class TextCaptcha : MonoBehaviour
     }
     
     IEnumerator displayOKAndDestroy() {
+        CaptchaManager.Instance.addSolvedTxt();
         OKText.DOFade(1,0);
         OKText.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.2f);

@@ -21,6 +21,7 @@ public class ImageCaptcha : MonoBehaviour
     
     void Start()
     {
+        GetComponent<AudioSource>().Play();
         if(liveCaptchas == null) {
             liveCaptchas = new List<ImageCaptcha>();
         }
@@ -146,6 +147,7 @@ public class ImageCaptcha : MonoBehaviour
     }
 
     void closeWindow() {
+        CaptchaManager.Instance.addSolvedImg();
         Tween hideTween = this.GetComponent<CanvasGroup>().DOFade(0,0.4f).SetDelay(0.2f);
         hideTween.OnComplete(
             () => {

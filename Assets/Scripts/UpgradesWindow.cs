@@ -60,6 +60,7 @@ public class UpgradesWindow : MonoBehaviour
         
     }
 
+    // int minCaptchas = 3;
     void updateWares() {
         CaptchaManager cm = CaptchaManager.Instance;
         ClickCounter cc = ClickCounter.Instance;
