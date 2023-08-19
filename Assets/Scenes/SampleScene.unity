@@ -524,9 +524,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 911155418226844479, guid: c4b3be80d220d48f9830d18383065508, type: 3}
+      propertyPath: m_text
+      value: Crazy Click Version 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 934661122386402651, guid: c4b3be80d220d48f9830d18383065508, type: 3}
+      propertyPath: m_text
+      value: 'imagesearch.exe
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 3067414276038799950, guid: c4b3be80d220d48f9830d18383065508, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463654640562063922, guid: c4b3be80d220d48f9830d18383065508, type: 3}
+      propertyPath: m_text
+      value: 'monkeytype.exe
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3765928468773337820, guid: c4b3be80d220d48f9830d18383065508, type: 3}
       propertyPath: m_IsActive
@@ -546,7 +562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5635199800944978089, guid: c4b3be80d220d48f9830d18383065508, type: 3}
       propertyPath: m_Alpha
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5891611482612328517, guid: c4b3be80d220d48f9830d18383065508, type: 3}
       propertyPath: m_IsActive
@@ -957,7 +973,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 500
   m_TargetDisplay: 0
 --- !u!224 &1191062770
 RectTransform:

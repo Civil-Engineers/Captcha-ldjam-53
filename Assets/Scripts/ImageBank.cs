@@ -8,12 +8,10 @@ public class ImageBank : MonoBehaviour
 
     [SerializeField] public Image[] bank;
     static List<string> tags = new List<string>{
-        "is a Animal", "Has a Soul",
-        "you can take in a fight", "can fit in your mouth",
-         "is an accessory"
+        "is an animal", "has a soul", "can fit in your mouth", "is an accessory", "is a food"
     };
     static List<string> strangeTags = new List<string>{
-        "a Soul",
+        "has a soul", "can fit in your mouth", 
     };
 
     void Awake()

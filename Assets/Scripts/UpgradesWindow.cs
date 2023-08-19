@@ -6,7 +6,7 @@ public class UpgradesWindow : MonoBehaviour
 {
     public static UpgradesWindow Instance { get; private set; }
     // private int[] baseCost = {5, 10, 20, 100, 1200};
-    private int[] baseCost = {10, 50, 180, 350, 1200};
+    private int[] baseCost = {10, 50, 150, 200, 1200};
 
     private int[] level = {0, 0, 0, 0, 0};
 
@@ -14,7 +14,7 @@ public class UpgradesWindow : MonoBehaviour
     // private string[] title = {"Crazy Click ", 0, 0, 0, 0};
     private float incRate = 1.15f;
     private int shownWares = 1;
-    [SerializeField] private Wares[] wares = new Wares[5];
+    [SerializeField] private Wares[] wares = new Wares[4];
 
     [SerializeField] private GameObject spawnParent;
     [SerializeField] private GameObject desktopBuddyPrefab;
@@ -60,7 +60,7 @@ public class UpgradesWindow : MonoBehaviour
         
     }
 
-    // int minCaptchas = 3;
+    int minCaptchas = 2;
     void updateWares() {
         CaptchaManager cm = CaptchaManager.Instance;
         ClickCounter cc = ClickCounter.Instance;
@@ -72,10 +72,10 @@ public class UpgradesWindow : MonoBehaviour
         } 
 
         if(cm.wareDownloaded) {
-            if (numClicks >= cm.getLvl2Clicks() && !lvl_2) {
+            if (numClicks >= cm.getLvl2Clicks() && !lvl_2 && cm.getSolvedTxtCaptchas() >= minCaptchas) {
                 showMoreWares();
                 lvl_2 = true; // monkeytype
-            } else if (numClicks >= cm.getLvl3Clicks() && !lvl_3) {
+            } else if (numClicks >= cm.getLvl3Clicks() && !lvl_3 && cm.getSolvedImgCaptchas() >= minCaptchas) {
                 showMoreWares();
                 lvl_3 = true; // pictopal
             }
@@ -97,9 +97,7 @@ public class UpgradesWindow : MonoBehaviour
         switch(slot) {
             case 0: 
                 if(slotLevel < 4) {
-                    wares[slot].setTitle("Crazy Click Version 0."+(slotLevel*2));
-                } else {
-                    wares[slot].setTitle("Crazy Click Version "+(slotLevel-4));
+                    wares[slot].setTitle("Crazy Click Version "+(slotLevel+1));
                 }
                 
                 // if(slotLevel == 4) {

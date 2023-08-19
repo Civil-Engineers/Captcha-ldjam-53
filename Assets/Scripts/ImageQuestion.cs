@@ -4,14 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public enum Direction {
-    NONE, LEFT, RIGHT
-}
-public struct Image
+public struct ImageQuestion
 {
     public Sprite sprite;
     public List<string> imageTags;
-    public List<string> possibleImageTags;
     public string name;
     public string description;
     public Direction facingTowards;

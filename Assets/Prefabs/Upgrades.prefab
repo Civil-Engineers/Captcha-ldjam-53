@@ -728,8 +728,8 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327714175644371858}
   m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
+  m_Alpha: 1
+  m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!114 &7742747196791103487
@@ -778,7 +778,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Random string generator.
 
-        UPDATE: Faster keysmash!!!'
+        More keysmashing!!!'
       objectReference: {fileID: 0}
     - target: {fileID: 2855537195028842320, guid: da2d40b1cb295464ea83888b9fb97fce, type: 3}
       propertyPath: m_Sprite
